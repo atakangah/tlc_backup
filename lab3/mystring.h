@@ -30,20 +30,27 @@ int strcmp(const char *l, const char *r) {
 
 
 char *strcat(char *l, const char *r) {
-	const int size_r = sizeof(r)/sizeof(r[0]);
-	const int size_l =  sizeof(l)/sizeof(l[0]);
-	char *final = new char[(size_r + size_l - 1)];
 
-	std::cout << "sizes: " << size_r << ", " << size_l <<std::endl;	
+	char *ref = l;
+	char final[5] = {'d','e','a','t','\0'};
+	/*
+	int counter = 0;
+	do {
+		//std::cout << "count: " << counter;
+		final[counter] = r[counter];
+		counter++;
+	} while (r[counter] != '\0');
 
-	int i, j = 0;
+	do {
+		//std::cout << "count: " << counter;
+		final[counter] = l[counter];
+		counter++;
+	} while (l[counter] != '\0');
 
+	final[counter]='\0';
+	*/
 
-
-
-	final[(size_r + size_l - 2)] = '\0';
-
-	return final;
+	return &final;
 }
 
 
