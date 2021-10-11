@@ -54,15 +54,12 @@ class ListOfStudentNamesTest {
 	@Test
 	void testStudentNamesListReturned() {
 		Register studentRegistration = new Register(this.registrations);
-		List<Nameable> studentsNameObjs = studentRegistration.getRegister();
+		List<String> studentsNameObjs = studentRegistration.getRegister();
 		
-		assertTrue(studentsNameObjs.get(0) instanceof main.java.abstracttypes.Nameable);
-		assertTrue(studentsNameObjs.get(0) instanceof main.java.basics.Student);
-		
-		for (Nameable name : studentsNameObjs) {
-			assertTrue(name.getName() instanceof java.lang.String, "Nameable is not a type of String");
-			assertFalse(name.getName().equals("Undefined"), "Student name is undefined");
-			assertFalse(name.getName().isEmpty(), "Nameable name is empty");
+		for (String name : studentsNameObjs) {
+			assertTrue(name instanceof java.lang.String, "Nameable is not a type of String");
+			assertFalse(name.equals("Undefined"), "Student name is undefined");
+			assertFalse(name.isEmpty(), "Nameable name is empty");
 		}
 	}
 
